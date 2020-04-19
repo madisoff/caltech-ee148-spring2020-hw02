@@ -3,10 +3,10 @@ import os
 
 np.random.seed(2020) # to ensure you always get the same train/test split
 
-data_path = '../data/RedLights2011_Medium'
-gts_path = '../data/hw02_annotations'
-split_path = '../data/hw02_splits'
-os.makedirs(preds_path, exist_ok=True) # create directory if needed
+data_path = '..\\data\\RedLights2011_Medium'
+gts_path = '..\\data\\hw02_annotations'
+split_path = '..\\data\\hw02_splits'
+os.makedirs(split_path, exist_ok=True) # create directory if needed
 
 split_test = False # set to True and run when annotations are available
 
@@ -52,7 +52,7 @@ if split_test:
     for i in range(n_files * train_frac):
         gts_train[file_names_train[i]] = gts[file_names_train[i]]
 
-    for i in range(n_files * (1 - test_frac))
+    for i in range(n_files * (1 - test_frac)):
         gts_test[file_names_test[i]] = gts[file_names_test[i]]
 
     with open(os.path.join(gts_path, 'annotations_train.json'),'w') as f:
